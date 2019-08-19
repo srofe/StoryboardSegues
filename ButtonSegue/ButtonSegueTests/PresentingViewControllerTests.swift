@@ -11,17 +11,25 @@ import XCTest
 
 class PresentingViewControllerTests: XCTestCase {
 
-    func test_viewController_hasButtonToTap() {
+    var sut: PresentingViewController!
+
+    override func setUp() {
+        super.setUp()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let sut = storyboard.instantiateViewController(withIdentifier: "PresentingViewController") as! PresentingViewController
+        sut = storyboard.instantiateViewController(withIdentifier: "PresentingViewController") as? PresentingViewController
         sut.loadViewIfNeeded()
+    }
+
+    override func tearDown() {
+        sut = nil
+        super.tearDown()
+    }
+
+    func test_viewController_hasButtonToTap() {
         XCTAssertNotNil(sut.buttonToTap, "The view controller shall have a button to tap.")
     }
 
     func test_buttonToTap_hasATarget() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let sut = storyboard.instantiateViewController(withIdentifier: "PresentingViewController") as! PresentingViewController
-        sut.loadViewIfNeeded()
         XCTAssertNotNil(sut.buttonToTap.allTargets.first, "The button to tap shall have at least one target.")
     }
 }
