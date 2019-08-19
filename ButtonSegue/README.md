@@ -114,4 +114,18 @@ func test_buttonToTap_onlyRespondsToTouchUpInsideEvent() {
 ```
 The property `allControlEvents` is a bitmask which can be used to determine which
 types of events the button will respond to. While not necessary in this case, it does show
-what can be tested - if it is important enougth to be tested.
+what can be tested - if it is important enough to be tested.
+
+### Test Only One Action
+The next test verifies there is only one action for the touch up inside event:
+```swift
+func test_buttonToTap_hasOnlyOneActionForTouchUpInsideEvent() {
+    guard let actions = sut.buttonToTap.actions(forTarget: sut.buttonToTap.allTargets.first, forControlEvent: .touchUpInside) else {
+        XCTFail("There should be a target action for the touch up inside event.")
+        return
+    }
+    XCTAssertEqual(actions.count, 1, "There shall only be one target action for the touch up inside event.")
+}
+```
+Again while not necessary in this case, if it is important to ensure there is only one action
+for a particular control event this can be tested.

@@ -41,4 +41,12 @@ class PresentingViewControllerTests: XCTestCase {
     func test_buttonToTap_onlyRespondsToTouchUpInsideEvent() {
         XCTAssertEqual(sut.buttonToTap.allControlEvents, .touchUpInside, "The button to tap shall only respond to touch up inside events.")
     }
+
+    func test_buttonToTap_hasOnlyOneActionForTouchUpInsideEvent() {
+        guard let actions = sut.buttonToTap.actions(forTarget: sut.buttonToTap.allTargets.first, forControlEvent: .touchUpInside) else {
+            XCTFail("There should be a target action for the touch up inside event.")
+            return
+        }
+        XCTAssertEqual(actions.count, 1, "There shall only be one target action for the touch up inside event.")
+    }
 }
