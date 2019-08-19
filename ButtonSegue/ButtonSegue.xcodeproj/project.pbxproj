@@ -14,6 +14,7 @@
 		F9447421230A68110039E4A6 /* PresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9447420230A68110039E4A6 /* PresentingViewController.swift */; };
 		F9447423230A682E0039E4A6 /* PresentingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9447422230A682E0039E4A6 /* PresentingViewControllerTests.swift */; };
 		F9447425230A6AF70039E4A6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F9447424230A6AF70039E4A6 /* README.md */; };
+		F9447427230A6F1D0039E4A6 /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9447426230A6F1D0039E4A6 /* PresentedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		F9447420230A68110039E4A6 /* PresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingViewController.swift; sourceTree = "<group>"; };
 		F9447422230A682E0039E4A6 /* PresentingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingViewControllerTests.swift; sourceTree = "<group>"; };
 		F9447424230A6AF70039E4A6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F9447426230A6F1D0039E4A6 /* PresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				F9447400230A67E80039E4A6 /* AppDelegate.swift */,
 				F9447420230A68110039E4A6 /* PresentingViewController.swift */,
+				F9447426230A6F1D0039E4A6 /* PresentedViewController.swift */,
 				F9447404230A67E80039E4A6 /* Main.storyboard */,
 				F9447407230A67E90039E4A6 /* Assets.xcassets */,
 				F9447409230A67E90039E4A6 /* LaunchScreen.storyboard */,
@@ -203,6 +206,7 @@
 			files = (
 				F9447421230A68110039E4A6 /* PresentingViewController.swift in Sources */,
 				F9447401230A67E80039E4A6 /* AppDelegate.swift in Sources */,
+				F9447427230A6F1D0039E4A6 /* PresentedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,4 +17,11 @@ class PresentingViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         XCTAssertNotNil(sut.buttonToTap, "The view controller shall have a button to tap.")
     }
+
+    func test_buttonToTap_hasATarget() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let sut = storyboard.instantiateViewController(withIdentifier: "PresentingViewController") as! PresentingViewController
+        sut.loadViewIfNeeded()
+        XCTAssertNotNil(sut.buttonToTap.allTargets.first, "The button to tap shall have at least one target.")
+    }
 }
