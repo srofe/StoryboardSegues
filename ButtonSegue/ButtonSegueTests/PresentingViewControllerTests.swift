@@ -37,4 +37,8 @@ class PresentingViewControllerTests: XCTestCase {
         let segue = sut.buttonToTap.allTargets.first?.base
         XCTAssertNotEqual((segue as AnyObject).identifier, "", "The segue from the button shall have an identifier.")
     }
+
+    func test_buttonToTap_onlyRespondsToTouchUpInsideEvent() {
+        XCTAssertEqual(sut.buttonToTap.allControlEvents, .touchUpInside, "The button to tap shall only respond to touch up inside events.")
+    }
 }

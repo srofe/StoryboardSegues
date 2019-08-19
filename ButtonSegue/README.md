@@ -104,3 +104,14 @@ cannot be checked with a test of the form:
 ```swift
 XCTAssertTrue(segue is UIStoryboardShowSegueTemplate)
 ```
+
+### Test Button Control Event(s)
+The next test verifies the button only responds to touch up inside events:
+```swift
+func test_buttonToTap_onlyRespondsToTouchUpInsideEvent() {
+    XCTAssertEqual(sut.buttonToTap.allControlEvents, .touchUpInside, "The button to tap shall only respond to touch up inside events.")
+}
+```
+The property `allControlEvents` is a bitmask which can be used to determine which
+types of events the button will respond to. While not necessary in this case, it does show
+what can be tested - if it is important enougth to be tested.
