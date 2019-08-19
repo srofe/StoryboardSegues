@@ -32,4 +32,9 @@ class PresentingViewControllerTests: XCTestCase {
     func test_buttonToTap_hasATarget() {
         XCTAssertNotNil(sut.buttonToTap.allTargets.first, "The button to tap shall have at least one target.")
     }
+
+    func test_buttonSegue_hasAnIdentifier() {
+        let segue = sut.buttonToTap.allTargets.first?.base
+        XCTAssertNotEqual((segue as AnyObject).identifier, "", "The segue from the button shall have an identifier.")
+    }
 }

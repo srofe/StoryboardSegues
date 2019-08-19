@@ -22,7 +22,7 @@
                                 <rect key="frame" x="159.5" y="460" width="95" height="30"/>
                                 <state key="normal" title="Button To Tap"/>
                                 <connections>
-                                    <segue destination="aAS-Ww-UhX" kind="show" id="ZAG-az-fFZ"/>
+                                    <segue destination="aAS-Ww-UhX" kind="show" identifier="ShowPresented" id="ZAG-az-fFZ"/>
                                 </connections>
                             </button>
                         </subviews>
