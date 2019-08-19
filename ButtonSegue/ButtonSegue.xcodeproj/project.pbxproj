@@ -13,6 +13,7 @@
 		F944740B230A67E90039E4A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9447409230A67E90039E4A6 /* LaunchScreen.storyboard */; };
 		F9447421230A68110039E4A6 /* PresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9447420230A68110039E4A6 /* PresentingViewController.swift */; };
 		F9447423230A682E0039E4A6 /* PresentingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9447422230A682E0039E4A6 /* PresentingViewControllerTests.swift */; };
+		F9447425230A6AF70039E4A6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F9447424230A6AF70039E4A6 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		F9447417230A67E90039E4A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9447420230A68110039E4A6 /* PresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingViewController.swift; sourceTree = "<group>"; };
 		F9447422230A682E0039E4A6 /* PresentingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingViewControllerTests.swift; sourceTree = "<group>"; };
+		F9447424230A6AF70039E4A6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		F94473F4230A67E80039E4A6 = {
 			isa = PBXGroup;
 			children = (
+				F9447424230A6AF70039E4A6 /* README.md */,
 				F94473FF230A67E80039E4A6 /* ButtonSegue */,
 				F9447414230A67E90039E4A6 /* ButtonSegueTests */,
 				F94473FE230A67E80039E4A6 /* Products */,
@@ -179,6 +182,7 @@
 			files = (
 				F944740B230A67E90039E4A6 /* LaunchScreen.storyboard in Resources */,
 				F9447408230A67E90039E4A6 /* Assets.xcassets in Resources */,
+				F9447425230A6AF70039E4A6 /* README.md in Resources */,
 				F9447406230A67E80039E4A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
