@@ -9,4 +9,6 @@
 import UIKit
 
 class PresentingViewController: UIViewController {
+
+    @IBOutlet private(set) weak var buttonToTap: UIButton!
 }

@@ -17,9 +17,22 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWn-9R-u7g">
+                                <rect key="frame" x="160" y="438" width="95" height="30"/>
+                                <state key="normal" title="Button To Tap"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kWn-9R-u7g" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Nri-cw-ZcI"/>
+                            <constraint firstItem="kWn-9R-u7g" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fOh-Ag-DpG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonToTap" destination="kWn-9R-u7g" id="iI9-zH-WQd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

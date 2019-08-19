@@ -11,7 +11,10 @@ import XCTest
 
 class PresentingViewControllerTests: XCTestCase {
 
-    func test_zero() {
-        XCTFail("Initial failing test for PresentingViewController.")
+    func test_viewController_hasButtonToTap() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let sut = storyboard.instantiateViewController(withIdentifier: "PresentingViewController") as! PresentingViewController
+        sut.loadViewIfNeeded()
+        XCTAssertNotNil(sut.buttonToTap, "The view controller shall have a button to tap.")
     }
 }
