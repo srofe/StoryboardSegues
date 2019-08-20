@@ -258,3 +258,30 @@ func test_tappingButtonToTap_setsPresentAnimationFlagTrue() {
 }
 ```
 This test is not really necessay here, but might be useful if a custom segue is being used.
+
+### Test Model Data Sent to Presented
+This test verifies the model data is sent to the presented view controller:
+```swift
+func test_tappingButtonToTap_passesDataToPresentedViewController() {
+    showViewControllerAndTapButton()
+    guard let presentedViewController = sutPresentSpy.presented as? PresentedViewController else {
+        XCTFail("Expecting presented view controller to be '\(PresentedViewController.self)' but got '\(String(describing: sutPresentSpy.presented))' instead.")
+        return
+    }
+    XCTAssertEqual(presentedViewController.modelObject, "Prepare for segue called", "When tapping the button, model data shall be passed from the presenting to the presented view controller.")
+}
+```
+This requires implementing the `PresentingViewController`'s `prepare(for segue:)`
+which is the general way to pass data from one view controller to another.
+
+This test verifies the model data is passed from the `PresentingViewController` to the
+`PresentedViewController`. It is also possible to verify the user interface has been
+updated using an assertion like:
+```swift
+XCTAssertEqual(presentedViewController.modelLabel.text, "Prepare for segue called")
+```
+However, this would be an example of a fragile test. Testing the user interface is updated
+for the `PresentedViewController` should be done in
+`PresentedViewControllerTests`, and not this test class. This test class
+(`PresentingViewControllerTests`) should only test things controlled by
+`PresentedViewController`.

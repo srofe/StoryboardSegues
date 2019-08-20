@@ -20,4 +20,10 @@ class PresentingViewController: UIViewController {
     deinit {
         print(">> PresentingViewController - deinit")
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowPresented", let presented = segue.destination as? PresentedViewController {
+            presented.modelObject = "Prepare for segue called"
+        }
+    }
 }

@@ -81,6 +81,15 @@ class PresentingViewControllerTests: XCTestCase {
         showViewControllerAndTapButton()
         XCTAssertTrue(sutPresentSpy.animated, "When tapping the button to tap, the present(::) annimated flag will be set true.")
     }
+
+    func test_tappingButtonToTap_passesDataToPresentedViewController() {
+        showViewControllerAndTapButton()
+        guard let presentedViewController = sutPresentSpy.presented as? PresentedViewController else {
+            XCTFail("Expecting presented view controller to be '\(PresentedViewController.self)' but got '\(String(describing: sutPresentSpy.presented))' instead.")
+            return
+        }
+        XCTAssertEqual(presentedViewController.modelObject, "Prepare for segue called", "When tapping the button, model data shall be passed from the presenting to the presented view controller.")
+    }
 }
 
 extension PresentingViewControllerTests {
