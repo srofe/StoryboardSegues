@@ -38,4 +38,11 @@ class PresentedViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.modelLabel.text, "Some model object text to show", "The model label shall be updated when the view is loaded.")
     }
+
+    func test_modelLable_updatedWhenModelObjectChangedq() {
+        sut.modelObject = "Some text"
+        sut.loadViewIfNeeded()
+        sut.modelObject = "New model text"
+        XCTAssertEqual(sut.modelLabel.text, "New model text", "The label text shall be updated when the model data is changed.")
+    }
 }

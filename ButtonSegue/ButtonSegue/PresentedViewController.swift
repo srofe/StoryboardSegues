@@ -10,7 +10,14 @@ import UIKit
 
 class PresentedViewController: UIViewController {
 
-    var modelObject: String = ""
+    var modelObject: String = "" {
+        didSet {
+            if let label = self.modelLabel {
+                label.text = modelObject
+            }
+        }
+    }
+
     @IBOutlet private(set) weak var modelLabel: UILabel!
 
     override func viewDidLoad() {
