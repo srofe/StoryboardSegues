@@ -12,16 +12,19 @@ import XCTest
 class PresentingViewControllerTests: XCTestCase {
 
     var sut: PresentingViewController!
+    var sutPresentSpy: ViewControllerPresentSpy!
 
     override func setUp() {
         super.setUp()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: "PresentingViewController") as? PresentingViewController
         sut.loadViewIfNeeded()
+        sutPresentSpy = ViewControllerPresentSpy()
     }
 
     override func tearDown() {
         RunLoop.current.run(until: Date())
+        sutPresentSpy = nil
         sut = nil
         super.tearDown()
     }
@@ -60,15 +63,18 @@ class PresentingViewControllerTests: XCTestCase {
     }
 
     func test_tappingButtonToTap_presentsThePresentedViewController() {
-        let sutPresentSpy = ViewControllerPresentSpy()
         showViewControllerAndTapButton()
         XCTAssertTrue(sutPresentSpy.presented is PresentedViewController, "Tapping the button to tap shall present the PresentedViewController.")
     }
 
     func test_tappingButtonToTap_hasPresentingViewControllerAsSut() {
-        let sutPresentSpy = ViewControllerPresentSpy()
         showViewControllerAndTapButton()
         XCTAssertTrue(sutPresentSpy.presenting === sut, "When tapping the button to tap, the presenting view controller shall be the SUT.")
+    }
+
+    func test_tappingButtonToTap_onlyPresentsPresentedViewControllerOnce() {
+        showViewControllerAndTapButton()
+        XCTAssertEqual(sutPresentSpy.presentedCount, 1, "When tapping the button to tap, the PresentedViewController shall only be presented once.")
     }
 }
 

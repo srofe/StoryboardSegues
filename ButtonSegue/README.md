@@ -218,3 +218,32 @@ address as the `sut`.
 __Note:__ The tests have been refactored to use helper methods in an extension to
 show the view controller and tap the button using the method
 `showViewControllerAndTapButton()`.
+
+### Test `present(_:animated:completion:)` Only Called Once
+The test verifies the swizzled method is only called once, meaning the presented view
+controller is only presented once:
+```swift
+func test_tappingButtonToTap_onlyPresentsPresentedViewControllerOnce() {
+    showViewControllerAndTapButton()
+    XCTAssertEqual(sutPresentSpy.presentedCount, 1, "When tapping the button to tap, the PresentedViewController shall only be presented once.")
+}
+```
+__Note:__ The tests have been refactored again to provide a class property for the
+`sutPresentSpy` move the instantiation of the test spy to the `setUp()` method, and
+set it to `nil` in the `tearDown()` method. These methods are now:
+```swift
+override func setUp() {
+    super.setUp()
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    sut = storyboard.instantiateViewController(withIdentifier: "PresentingViewController") as? PresentingViewController
+    sut.loadViewIfNeeded()
+    sutPresentSpy = ViewControllerPresentSpy()
+}
+
+override func tearDown() {
+    RunLoop.current.run(until: Date())
+    sutPresentSpy = nil
+    sut = nil
+    super.tearDown()
+}
+```
