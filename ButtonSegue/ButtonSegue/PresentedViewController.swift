@@ -12,9 +12,7 @@ class PresentedViewController: UIViewController {
 
     var modelObject: String = "" {
         didSet {
-            if let label = self.modelLabel {
-                label.text = modelObject
-            }
+            updateUserInterface()
         }
     }
 
@@ -22,7 +20,7 @@ class PresentedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.modelLabel.text = modelObject
+        updateUserInterface()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -32,5 +30,11 @@ class PresentedViewController: UIViewController {
 
     deinit {
         print(">> PresentedViewController - deinit")
+    }
+
+    fileprivate func updateUserInterface() {
+        if let label = self.modelLabel {
+            label.text = modelObject
+        }
     }
 }
