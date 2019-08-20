@@ -13,6 +13,11 @@ class PresentedViewController: UIViewController {
     var modelObject: String = ""
     @IBOutlet private(set) weak var modelLabel: UILabel!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.modelLabel.text = modelObject
+    }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         print(">> PresentedViewController - init")

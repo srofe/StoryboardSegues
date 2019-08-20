@@ -32,4 +32,10 @@ class PresentedViewControllerTests: XCTestCase {
     func test_viewController_hasModelObject() {
         XCTAssertNotNil(sut.modelObject, "The view controller shall have a model object.")
     }
+
+    func test_modelLabel_isSetWhenViewLoaded() {
+        sut.modelObject = "Some model object text to show"
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.modelLabel.text, "Some model object text to show", "The model label shall be updated when the view is loaded.")
+    }
 }
