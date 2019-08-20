@@ -49,9 +49,25 @@
                     <view key="view" contentMode="scaleToFill" id="6IV-lt-zb8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vti-Ce-TsA">
+                                <rect key="frame" x="20" y="464.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vti-Ce-TsA" firstAttribute="centerY" secondItem="0qp-JS-bhu" secondAttribute="centerY" id="ESb-xN-Kgs"/>
+                            <constraint firstItem="0qp-JS-bhu" firstAttribute="trailing" secondItem="Vti-Ce-TsA" secondAttribute="trailing" constant="20" id="muG-Xa-Kan"/>
+                            <constraint firstItem="Vti-Ce-TsA" firstAttribute="leading" secondItem="0qp-JS-bhu" secondAttribute="leading" constant="20" id="ngr-dA-AsK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0qp-JS-bhu"/>
                     </view>
+                    <connections>
+                        <outlet property="modelLabel" destination="Vti-Ce-TsA" id="BhY-Oo-Jgz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3t-4d-g3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,6 +18,7 @@
 		F95AE392230B7718007A31AF /* ViewControllerPresentSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AE38F230B7718007A31AF /* ViewControllerPresentSpy.swift */; };
 		F95AE393230B7718007A31AF /* UIViewControllerPresentSpyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AE390230B7718007A31AF /* UIViewControllerPresentSpyExtension.swift */; };
 		F95AE394230B7718007A31AF /* NSObjectReplaceMethodExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AE391230B7718007A31AF /* NSObjectReplaceMethodExtension.swift */; };
+		F95AE396230BBFCE007A31AF /* PresentedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AE395230BBFCE007A31AF /* PresentedViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		F95AE38F230B7718007A31AF /* ViewControllerPresentSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresentSpy.swift; sourceTree = "<group>"; };
 		F95AE390230B7718007A31AF /* UIViewControllerPresentSpyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerPresentSpyExtension.swift; sourceTree = "<group>"; };
 		F95AE391230B7718007A31AF /* NSObjectReplaceMethodExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectReplaceMethodExtension.swift; sourceTree = "<group>"; };
+		F95AE395230BBFCE007A31AF /* PresentedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				F9447422230A682E0039E4A6 /* PresentingViewControllerTests.swift */,
+				F95AE395230BBFCE007A31AF /* PresentedViewControllerTests.swift */,
 				F95AE38E230B7718007A31AF /* PresentSpy */,
 				F9447417230A67E90039E4A6 /* Info.plist */,
 			);
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F95AE396230BBFCE007A31AF /* PresentedViewControllerTests.swift in Sources */,
 				F9447423230A682E0039E4A6 /* PresentingViewControllerTests.swift in Sources */,
 				F95AE394230B7718007A31AF /* NSObjectReplaceMethodExtension.swift in Sources */,
 				F95AE393230B7718007A31AF /* UIViewControllerPresentSpyExtension.swift in Sources */,
