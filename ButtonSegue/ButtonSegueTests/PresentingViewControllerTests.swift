@@ -49,4 +49,12 @@ class PresentingViewControllerTests: XCTestCase {
         }
         XCTAssertEqual(actions.count, 1, "There shall only be one target action for the touch up inside event.")
     }
+
+    func test_actionForTouchUpInside_isSeguePeform() {
+        guard let actions = sut.buttonToTap.actions(forTarget: sut.buttonToTap.allTargets.first, forControlEvent: .touchUpInside) else {
+            XCTFail("There should be a target action for the touch up inside event.")
+            return
+        }
+        XCTAssertTrue(actions.contains("perform:"), "The target action for the touch up inside event shall be the segue's 'perform:' method.")
+    }
 }

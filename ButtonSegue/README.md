@@ -129,3 +129,24 @@ func test_buttonToTap_hasOnlyOneActionForTouchUpInsideEvent() {
 ```
 Again while not necessary in this case, if it is important to ensure there is only one action
 for a particular control event this can be tested.
+
+### Test Action is `perform:` Method
+The next test is verifies the action for the touch up inside event is the `perform:` method
+of the segue:
+```swift
+func test_actionForTouchUpInside_isSeguePeform() {
+    guard let actions = sut.buttonToTap.actions(forTarget: sut.buttonToTap.allTargets.first, forControlEvent: .touchUpInside) else {
+        XCTFail("There should be a target action for the touch up inside event.")
+        return
+    }
+    XCTAssertTrue(actions.contains("perform:"), "The target action for the touch up inside event shall be the segue's 'perform:' method.")
+}
+```
+This test is not necessary at all - since it is testing Apple framework functionality. However,
+it is included here to illustrate what is possible and why it is not a good idea to test this.
+It is not recommened such a test be used, since changes in the framework could result in
+this test failing in the future. It is important testing is only done on things that we have
+control over - and not external dependencies.
+
+This is considered a fragile test as it is suseptible to failure if there is a change in the way
+a segue is implemented, and that is outside the scope of the application being developed.
