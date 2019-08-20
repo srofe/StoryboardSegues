@@ -61,10 +61,26 @@ class PresentingViewControllerTests: XCTestCase {
 
     func test_tappingButtonToTap_presentsThePresentedViewController() {
         let sutPresentSpy = ViewControllerPresentSpy()
+        showViewControllerAndTapButton()
+        XCTAssertTrue(sutPresentSpy.presented is PresentedViewController, "Tapping the button to tap shall present the PresentedViewController.")
+    }
+
+    func test_tappingButtonToTap_hasPresentingViewControllerAsSut() {
+        let sutPresentSpy = ViewControllerPresentSpy()
+        showViewControllerAndTapButton()
+        XCTAssertTrue(sutPresentSpy.presenting === sut, "When tapping the button to tap, the presenting view controller shall be the SUT.")
+    }
+}
+
+extension PresentingViewControllerTests {
+    fileprivate func showViewController() {
         let window = UIWindow()
         window.rootViewController = sut
         window.isHidden = false
+    }
+
+    fileprivate func showViewControllerAndTapButton() {
+        showViewController()
         sut.buttonToTap.sendActions(for: .touchUpInside)
-        XCTAssertTrue(sutPresentSpy.presented is PresentedViewController, "Tapping the button to tap shall present the PresentedViewController.")
     }
 }

@@ -202,3 +202,19 @@ is not called untill after the test suite has finished - rather than after the t
 completed. This implies there is a view controller hanging around in memory until after
 the tests have all been run, which is not ideal as it is preferred to have a clean test
 environment for each test case.
+
+### Test Presenting View Controller is SUT
+This test verifies the presenting view controller is the System Under Test (SUT):
+```swift
+func test_tappingButtonToTap_hasPresentingViewControllerAsSut() {
+    let sutPresentSpy = ViewControllerPresentSpy()
+    showViewControllerAndTapButton()
+    XCTAssertTrue(sutPresentSpy.presenting === sut, "When tapping the button to tap, the presenting view controller shall be the SUT.")
+}
+```
+The `===` operator is used to verify `sutPresentSpy.presenting` points to the same
+address as the `sut`.
+
+__Note:__ The tests have been refactored to use helper methods in an extension to
+show the view controller and tap the button using the method
+`showViewControllerAndTapButton()`.
