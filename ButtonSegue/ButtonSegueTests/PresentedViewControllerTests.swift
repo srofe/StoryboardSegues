@@ -28,4 +28,8 @@ class PresentedViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         XCTAssertNotNil(sut.modelLabel, "The view controller shall have a label for the model data.")
     }
+
+    func test_viewController_hasModelObject() {
+        XCTAssertNotNil(sut.modelObject, "The view controller shall have a model object.")
+    }
 }

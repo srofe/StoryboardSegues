@@ -10,6 +10,7 @@ import UIKit
 
 class PresentedViewController: UIViewController {
 
+    var modelObject: String = ""
     @IBOutlet private(set) weak var modelLabel: UILabel!
 
     required init?(coder aDecoder: NSCoder) {
