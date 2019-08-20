@@ -76,6 +76,11 @@ class PresentingViewControllerTests: XCTestCase {
         showViewControllerAndTapButton()
         XCTAssertEqual(sutPresentSpy.presentedCount, 1, "When tapping the button to tap, the PresentedViewController shall only be presented once.")
     }
+
+    func test_tappingButtonToTap_setsPresentAnimationFlagTrue() {
+        showViewControllerAndTapButton()
+        XCTAssertTrue(sutPresentSpy.animated, "When tapping the button to tap, the present(::) annimated flag will be set true.")
+    }
 }
 
 extension PresentingViewControllerTests {

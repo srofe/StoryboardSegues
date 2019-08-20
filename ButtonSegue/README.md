@@ -247,3 +247,14 @@ override func tearDown() {
     super.tearDown()
 }
 ```
+
+### Test Animated Flag Set
+This test verifies the `animated` flag of the `present(_:animated:completion:)` has
+been set:
+```swift
+func test_tappingButtonToTap_setsPresentAnimationFlagTrue() {
+    showViewControllerAndTapButton()
+    XCTAssertTrue(sutPresentSpy.animated, "When tapping the button to tap, the present(::) annimated flag will be set true.")
+}
+```
+This test is not really necessay here, but might be useful if a custom segue is being used.
