@@ -15,6 +15,9 @@
 		F9447423230A682E0039E4A6 /* PresentingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9447422230A682E0039E4A6 /* PresentingViewControllerTests.swift */; };
 		F9447425230A6AF70039E4A6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F9447424230A6AF70039E4A6 /* README.md */; };
 		F9447427230A6F1D0039E4A6 /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9447426230A6F1D0039E4A6 /* PresentedViewController.swift */; };
+		F95AE392230B7718007A31AF /* ViewControllerPresentSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AE38F230B7718007A31AF /* ViewControllerPresentSpy.swift */; };
+		F95AE393230B7718007A31AF /* UIViewControllerPresentSpyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AE390230B7718007A31AF /* UIViewControllerPresentSpyExtension.swift */; };
+		F95AE394230B7718007A31AF /* NSObjectReplaceMethodExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AE391230B7718007A31AF /* NSObjectReplaceMethodExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		F9447422230A682E0039E4A6 /* PresentingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingViewControllerTests.swift; sourceTree = "<group>"; };
 		F9447424230A6AF70039E4A6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F9447426230A6F1D0039E4A6 /* PresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
+		F95AE38F230B7718007A31AF /* ViewControllerPresentSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresentSpy.swift; sourceTree = "<group>"; };
+		F95AE390230B7718007A31AF /* UIViewControllerPresentSpyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerPresentSpyExtension.swift; sourceTree = "<group>"; };
+		F95AE391230B7718007A31AF /* NSObjectReplaceMethodExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectReplaceMethodExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +103,20 @@
 			isa = PBXGroup;
 			children = (
 				F9447422230A682E0039E4A6 /* PresentingViewControllerTests.swift */,
+				F95AE38E230B7718007A31AF /* PresentSpy */,
 				F9447417230A67E90039E4A6 /* Info.plist */,
 			);
 			path = ButtonSegueTests;
+			sourceTree = "<group>";
+		};
+		F95AE38E230B7718007A31AF /* PresentSpy */ = {
+			isa = PBXGroup;
+			children = (
+				F95AE38F230B7718007A31AF /* ViewControllerPresentSpy.swift */,
+				F95AE390230B7718007A31AF /* UIViewControllerPresentSpyExtension.swift */,
+				F95AE391230B7718007A31AF /* NSObjectReplaceMethodExtension.swift */,
+			);
+			path = PresentSpy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +232,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9447423230A682E0039E4A6 /* PresentingViewControllerTests.swift in Sources */,
+				F95AE394230B7718007A31AF /* NSObjectReplaceMethodExtension.swift in Sources */,
+				F95AE393230B7718007A31AF /* UIViewControllerPresentSpyExtension.swift in Sources */,
+				F95AE392230B7718007A31AF /* ViewControllerPresentSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

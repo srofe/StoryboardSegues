@@ -9,4 +9,13 @@
 import UIKit
 
 class PresentedViewController: UIViewController {
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        print(">> PresentedViewController - init")
+    }
+
+    deinit {
+        print(">> PresentedViewController - deinit")
+    }
 }

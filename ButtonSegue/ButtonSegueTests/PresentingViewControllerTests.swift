@@ -21,6 +21,7 @@ class PresentingViewControllerTests: XCTestCase {
     }
 
     override func tearDown() {
+        RunLoop.current.run(until: Date())
         sut = nil
         super.tearDown()
     }
@@ -56,5 +57,14 @@ class PresentingViewControllerTests: XCTestCase {
             return
         }
         XCTAssertTrue(actions.contains("perform:"), "The target action for the touch up inside event shall be the segue's 'perform:' method.")
+    }
+
+    func test_tappingButtonToTap_presentsThePresentedViewController() {
+        let sutPresentSpy = ViewControllerPresentSpy()
+        let window = UIWindow()
+        window.rootViewController = sut
+        window.isHidden = false
+        sut.buttonToTap.sendActions(for: .touchUpInside)
+        XCTAssertTrue(sutPresentSpy.presented is PresentedViewController, "Tapping the button to tap shall present the PresentedViewController.")
     }
 }

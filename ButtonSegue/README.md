@@ -50,6 +50,11 @@ override func tearDown() {
 
 ## Test Cases
 
+The following describes the test cases included in the file
+`PresentingViewControllerTests.swift`. Not all these tests are required they go
+beyond the aspects listed above. This is only to illustrate what can be tested - not what
+should or needs to be tested.
+
 ### Test Button Exists
 The first test verifies there is a button, and it is instantiated from the storyboard:
 ```swift
@@ -150,3 +155,50 @@ control over - and not external dependencies.
 
 This is considered a fragile test as it is suseptible to failure if there is a change in the way
 a segue is implemented, and that is outside the scope of the application being developed.
+
+### Test Tapping Button Presents New View Controller
+This test simulates tapping the button to perform the segue and verify the expected view
+controller is presented. It uses a `ViewControllerPresentSpy` to gain access to the
+presented view controller.  This requires the following to be done:
+- Adding the `ViewControllerPresentSpy` to the project - along with the extensions it
+depends on.
+- Creating an instance of `ViewControllerPresentSpy` to use in the test.
+- Create a window, set the root view controller of this window to the sut (our
+`PresentingViewController`) and make the window visible. This is necessary to have
+this view controller present the other view controller.
+- Simulate tapping the button by sending and action for the event `.touchUpInside`.
+- The RunLoop needs to be exercised in `tearDown()` to clean up memory. 
+
+With this all done, the view controller spy can be used to verify if the presented view
+controller is the expected type of `PresentedViewController`.
+
+```swift
+func test_tappingButtonToTap_presentsThePresentedViewController() {
+    let sutPresentSpy = ViewControllerPresentSpy()
+    let window = UIWindow()
+    window.rootViewController = sut
+    window.isHidden = false
+    sut.buttonToTap.sendActions(for: .touchUpInside)
+    XCTAssertTrue(sutPresentSpy.presented is PresentedViewController, "Tapping the button to tap shall present the PresentedViewController.")
+}
+```
+The `tearDown()` method is now:
+```swift
+override func tearDown() {
+    RunLoop.current.run(until: Date())
+    sut = nil
+    super.tearDown()
+}
+```
+The `ViewControllerPresentSpy` uses method swizzling to capture parameters passed
+to the `PresentingViewController`'s `present(_:animated:completion:)` method.
+The first of these is the presented view controller - which enables the test above.
+
+__Note:__ The two view controllers implement `init()` and `deinit` which both print
+a message to the console to show if and when they are called. To see memory related
+issues, remove the call to `RunLoop.current.run(until: Date())` from the
+`tearDown()` method. This will show that `deinit` for the `PresentingViewController`
+is not called untill after the test suite has finished - rather than after the test case has
+completed. This implies there is a view controller hanging around in memory until after
+the tests have all been run, which is not ideal as it is preferred to have a clean test
+environment for each test case.

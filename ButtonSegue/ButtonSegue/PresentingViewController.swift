@@ -11,4 +11,13 @@ import UIKit
 class PresentingViewController: UIViewController {
 
     @IBOutlet private(set) weak var buttonToTap: UIButton!
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        print(">> PresentingViewController - init")
+    }
+
+    deinit {
+        print(">> PresentingViewController - deinit")
+    }
 }
