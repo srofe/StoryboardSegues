@@ -10,6 +10,8 @@ import UIKit
 
 class PresentedViewController: UIViewController {
 
+    @IBOutlet private(set) weak var modelLabel: UILabel!
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         print(">> PresentedViewController - init")
